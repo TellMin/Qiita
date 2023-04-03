@@ -1,8 +1,10 @@
 <!--
 title:   SvelteKitのForm Actionでオブジェクトを送信する
 tags:    Svelte,SvelteKit,TypeScript
+id:      2ec6075d943ea400fb1e
 private: false
 -->
+
 # はじめに 🐶
 
 svelteKitの FormActionは、フォームの送信を制御するためのコンポーネントです。
