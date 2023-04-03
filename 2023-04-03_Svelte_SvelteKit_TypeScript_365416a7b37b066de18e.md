@@ -1,7 +1,6 @@
 <!--
 title:   SvelteKitのForm Actionでオブジェクトを送信する
 tags:    Svelte,SvelteKit,TypeScript
-id:      365416a7b37b066de18e
 private: false
 -->
 # はじめに 🐶
