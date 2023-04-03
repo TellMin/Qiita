@@ -1,11 +1,9 @@
 <!--
 title:   SvelteKitのForm Actionでオブジェクトを送信する
 tags:    Svelte,SvelteKit,TypeScript
-id:      365416a7b37b066de18e
+id:      a8a0ce95db35c06e4b1d
 private: false
 -->
-
-
 # はじめに 🐶
 
 svelteKitの FormActionは、フォームの送信を制御するためのコンポーネントです。
@@ -23,13 +21,13 @@ svelteKitの FormActionは、フォームの送信を制御するためのコン
 以下に実装例を示します。
 
 まずは以下のようにフォームから送信するオブジェクトの型定義をします。
-```ts
+`ts
 // 送信するオブジェクトの型定義
 interface SampleObject {
   name: string;
   age: number;
 }
-```
+`
 
 次に、以下のようにフォームを実装します。
 
@@ -83,10 +81,10 @@ export const actions: Actions = {
 上記の実装で、+page.server.tsに記述されたform actionを実行することができます。
 
 🔽送信前
-![Before request](./before.png)
+![Before request](before.png)
 
 🔽送信後
-![After request](./after.png)
+![After request](after.png)
 
 ## 型を安全にパースする 📌
 
