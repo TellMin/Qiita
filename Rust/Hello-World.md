@@ -1,6 +1,5 @@
 <!--
 title:   Rust入門 Hello World とテスト書いてみた
-tags:    
 private: false
 -->
 
