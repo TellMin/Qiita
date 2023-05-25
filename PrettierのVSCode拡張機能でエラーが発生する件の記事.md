@@ -17,9 +17,9 @@ private: false
 
 - `Visual Studio Code - Insiders` : 1.79.0-insider (user setup)
 - `Prettier - Code formatter` : v9.13.0
-- `WLS` Ubuntu 22.04
+- `WSL` Ubuntu 22.04
 - `asdf` v0.11.3
-- `nodejs` 20.2.0
+  - `nodejs` 20.2.0
 
 ## 何が起きたのか :thinking:
 
@@ -44,11 +44,12 @@ TypeError: Cannot read properties of undefined (reading 'uid')
 
 ということで、'uid'というプロパティを読み込もうとしたときに、その親オブジェクトがundefinedであることが原因のようです。
 
-調べてみると、`prettier`のリポジトリに次のようなissueが立てられてました。
+調べてみると、prettierのリポジトリに次のようなissueが立てられていました。
 
 - [Broken in vs code insiders - #3000](https://github.com/prettier/prettier-vscode/issues/3000)
 
 そのなかで、次のようなコメントがありました。
+
 
 > **Dnouv:**
 > Well, not sure if it is the correct way to resolve but,
@@ -58,16 +59,20 @@ TypeError: Cannot read properties of undefined (reading 'uid')
 > 
 > Thank you!
 
+https://github.com/prettier/prettier-vscode/issues/3000#issuecomment-1547290873
+
 ということで、`settings.json`に次のような設定を追加することで、エラーが解消されました。
 
 ```json
   "prettier.prettierPath": "./node_modules/prettier",
 ```
 
+（Dnouvさんに:rocket:飛ばしておきました。参考になった方は是非！）
+
 ## まとめ :memo:
 
-悩んでいた時間に対して、あっさりと解決してしまったので、記事にしてみました。
-PrettierプラグインのModuleResolverのエラーのようですが、プロジェクトによっては正しく機能することもあったため、詳しい原因まではわからなかったのが心残りです。
+悩んでいた時間に対して、あっさりと解決してしまいました。
+PrettierプラグインのModuleResolverのエラーのようですが、プロジェクトによっては正しく機能することもあり、詳しい原因まではわからなかったのが心残りです。
 
-さらに情報が分かり次第追記していきます。
+さらに情報が分かり次第、追記していきます。
 どなたかのお役に立てれば幸いです。
