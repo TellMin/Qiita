@@ -4,7 +4,18 @@ tags:    Blazor,C#,ChatGPT,入門
 id:      7baaba35111fddeffe0c
 private: false
 -->
-# この記事は？ :dango:
+
+[6/14 追記]
+
+`Betalgo.OpenAI.GPT3`は非推奨になっており、代わりに[`Betalgo.OpenAI`](https://github.com/betalgo/openai)が利用可能です。
+当記事の内容については、名前空間を修正することで動作します。
+
+新しく記事を書きました！こちらも是非！
+:arrow_forward: [C#でChatGPT APIを触りたい 2 ~ ReadableStream ~](https://qiita.com/TellMin/items/9059423600a6897cef0c)
+
+---
+
+## この記事は？ :dango:
 
 - ChatGPT APIをC#で叩くよ
 - [Betalgo.OpenAI.GPT3](https://github.com/betalgo/openai) v6.7.0 を利用するよ
@@ -14,16 +25,16 @@ private: false
 
 - C#でChatGPT APIを叩きたい人へ
 
-## はじめに :cactus:
+## はじめに :cactus: 
 
 ChatGPTが提供されてからQiitaにたくさんの記事が投稿されていますが、フロントエンド界隈と違い、C#のChatGPT APIライブラリを紹介している記事がないため、本記事を書きました。
 
-## 基本実装 :zap:
+## 基本実装 :zap: 
 
 基本の実装は [Readme](https://github.com/betalgo/openai/blob/master/Readme.md) にて詳しく紹介されていますが、ざっと下記のように実装します。
 
 ```C#
-var completionResult =
+var completionResult = 
     await openAIService.ChatCompletion.CreateCompletion
     (
         new ChatCompletionCreateRequest()
@@ -41,7 +52,7 @@ if (completionResult.Successful) return completionResult;
 
 APIのモデルに関しては構造自体は変わらないため、Messagesに会話内容を詰め込めばAIの回答が返ってきます。
 
-### セットアップ :secret:
+### セットアップ :secret: 
 
 APIを叩くためにはOpenAIのAPIキーを渡す必要があります。
 `Betalgo.OpenAI.GPT3`では直接キーを渡して生成する方法と`secrets.json`からの自動取得両方に対応しています。[^d]
@@ -62,7 +73,7 @@ serviceCollection.AddOpenAIService();
 
 ```
 
-## 応用編 :fire:
+## 応用編 :fire: 
 
 ここからは、どのようなpromptを渡して活用するかの話になります。自身の開発事例を紹介します。
 
